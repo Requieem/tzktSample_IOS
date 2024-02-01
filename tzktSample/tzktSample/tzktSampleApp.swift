@@ -11,7 +11,8 @@ import SwiftUI
 struct tzktSampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BlockTable()
+                .environment(\.font, .custom("Urbanist", size: 12))
         }
     }
 }

@@ -7,8 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B6A2F672B6B0E42009032B4 /* Urbanist-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F502B6B0E42009032B4 /* Urbanist-VariableFont_wght.ttf */; };
+		7B6A2F682B6B0E42009032B4 /* Urbanist-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F522B6B0E42009032B4 /* Urbanist-Bold.ttf */; };
+		7B6A2F692B6B0E42009032B4 /* Urbanist-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F532B6B0E42009032B4 /* Urbanist-Regular.ttf */; };
+		7B6A2F6A2B6B0E42009032B4 /* Urbanist-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F542B6B0E42009032B4 /* Urbanist-LightItalic.ttf */; };
+		7B6A2F6B2B6B0E42009032B4 /* Urbanist-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F552B6B0E42009032B4 /* Urbanist-ExtraLightItalic.ttf */; };
+		7B6A2F6C2B6B0E42009032B4 /* Urbanist-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F562B6B0E42009032B4 /* Urbanist-ExtraBoldItalic.ttf */; };
+		7B6A2F6D2B6B0E42009032B4 /* Urbanist-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F572B6B0E42009032B4 /* Urbanist-Thin.ttf */; };
+		7B6A2F6E2B6B0E42009032B4 /* Urbanist-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F582B6B0E42009032B4 /* Urbanist-MediumItalic.ttf */; };
+		7B6A2F6F2B6B0E42009032B4 /* Urbanist-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F592B6B0E42009032B4 /* Urbanist-SemiBold.ttf */; };
+		7B6A2F702B6B0E42009032B4 /* Urbanist-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F5A2B6B0E42009032B4 /* Urbanist-Italic.ttf */; };
+		7B6A2F712B6B0E42009032B4 /* Urbanist-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F5B2B6B0E42009032B4 /* Urbanist-Black.ttf */; };
+		7B6A2F722B6B0E42009032B4 /* Urbanist-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F5C2B6B0E42009032B4 /* Urbanist-BlackItalic.ttf */; };
+		7B6A2F732B6B0E42009032B4 /* Urbanist-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F5D2B6B0E42009032B4 /* Urbanist-Light.ttf */; };
+		7B6A2F742B6B0E42009032B4 /* Urbanist-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F5E2B6B0E42009032B4 /* Urbanist-SemiBoldItalic.ttf */; };
+		7B6A2F752B6B0E42009032B4 /* Urbanist-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F5F2B6B0E42009032B4 /* Urbanist-BoldItalic.ttf */; };
+		7B6A2F762B6B0E42009032B4 /* Urbanist-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F602B6B0E42009032B4 /* Urbanist-ExtraBold.ttf */; };
+		7B6A2F772B6B0E42009032B4 /* Urbanist-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F612B6B0E42009032B4 /* Urbanist-Medium.ttf */; };
+		7B6A2F782B6B0E42009032B4 /* Urbanist-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F622B6B0E42009032B4 /* Urbanist-ExtraLight.ttf */; };
+		7B6A2F792B6B0E42009032B4 /* Urbanist-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F632B6B0E42009032B4 /* Urbanist-ThinItalic.ttf */; };
+		7B6A2F7A2B6B0E42009032B4 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F642B6B0E42009032B4 /* OFL.txt */; };
+		7B6A2F7B2B6B0E42009032B4 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F652B6B0E42009032B4 /* README.txt */; };
+		7B6A2F7C2B6B0E42009032B4 /* Urbanist-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F662B6B0E42009032B4 /* Urbanist-Italic-VariableFont_wght.ttf */; };
+		7B6A2F802B6B1C18009032B4 /* VM_TransactionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A2F7F2B6B1C18009032B4 /* VM_TransactionTable.swift */; };
+		7B6A2F822B6B1F40009032B4 /* TransactionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6A2F812B6B1F40009032B4 /* TransactionTable.swift */; };
 		7BC34D082B6AAA1300A34D02 /* tzktSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34D072B6AAA1300A34D02 /* tzktSampleApp.swift */; };
-		7BC34D0A2B6AAA1300A34D02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34D092B6AAA1300A34D02 /* ContentView.swift */; };
+		7BC34D0A2B6AAA1300A34D02 /* BlockTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34D092B6AAA1300A34D02 /* BlockTable.swift */; };
 		7BC34D0C2B6AAA1500A34D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC34D0B2B6AAA1500A34D02 /* Assets.xcassets */; };
 		7BC34D0F2B6AAA1500A34D02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC34D0E2B6AAA1500A34D02 /* Preview Assets.xcassets */; };
 		7BC34D192B6AAA1500A34D02 /* tzktSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC34D182B6AAA1500A34D02 /* tzktSampleTests.swift */; };
@@ -38,9 +62,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B6A2F502B6B0E42009032B4 /* Urbanist-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		7B6A2F522B6B0E42009032B4 /* Urbanist-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Bold.ttf"; sourceTree = "<group>"; };
+		7B6A2F532B6B0E42009032B4 /* Urbanist-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Regular.ttf"; sourceTree = "<group>"; };
+		7B6A2F542B6B0E42009032B4 /* Urbanist-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-LightItalic.ttf"; sourceTree = "<group>"; };
+		7B6A2F552B6B0E42009032B4 /* Urbanist-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		7B6A2F562B6B0E42009032B4 /* Urbanist-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		7B6A2F572B6B0E42009032B4 /* Urbanist-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Thin.ttf"; sourceTree = "<group>"; };
+		7B6A2F582B6B0E42009032B4 /* Urbanist-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-MediumItalic.ttf"; sourceTree = "<group>"; };
+		7B6A2F592B6B0E42009032B4 /* Urbanist-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-SemiBold.ttf"; sourceTree = "<group>"; };
+		7B6A2F5A2B6B0E42009032B4 /* Urbanist-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Italic.ttf"; sourceTree = "<group>"; };
+		7B6A2F5B2B6B0E42009032B4 /* Urbanist-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Black.ttf"; sourceTree = "<group>"; };
+		7B6A2F5C2B6B0E42009032B4 /* Urbanist-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7B6A2F5D2B6B0E42009032B4 /* Urbanist-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Light.ttf"; sourceTree = "<group>"; };
+		7B6A2F5E2B6B0E42009032B4 /* Urbanist-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		7B6A2F5F2B6B0E42009032B4 /* Urbanist-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7B6A2F602B6B0E42009032B4 /* Urbanist-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7B6A2F612B6B0E42009032B4 /* Urbanist-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Medium.ttf"; sourceTree = "<group>"; };
+		7B6A2F622B6B0E42009032B4 /* Urbanist-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ExtraLight.ttf"; sourceTree = "<group>"; };
+		7B6A2F632B6B0E42009032B4 /* Urbanist-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-ThinItalic.ttf"; sourceTree = "<group>"; };
+		7B6A2F642B6B0E42009032B4 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		7B6A2F652B6B0E42009032B4 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		7B6A2F662B6B0E42009032B4 /* Urbanist-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		7B6A2F7E2B6B10BE009032B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7B6A2F7F2B6B1C18009032B4 /* VM_TransactionTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VM_TransactionTable.swift; sourceTree = "<group>"; };
+		7B6A2F812B6B1F40009032B4 /* TransactionTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTable.swift; sourceTree = "<group>"; };
 		7BC34D042B6AAA1300A34D02 /* tzktSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tzktSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC34D072B6AAA1300A34D02 /* tzktSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tzktSampleApp.swift; sourceTree = "<group>"; };
-		7BC34D092B6AAA1300A34D02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7BC34D092B6AAA1300A34D02 /* BlockTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTable.swift; sourceTree = "<group>"; };
 		7BC34D0B2B6AAA1500A34D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BC34D0E2B6AAA1500A34D02 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7BC34D142B6AAA1500A34D02 /* tzktSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tzktSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,9 +128,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B6A2F4F2B6B0E42009032B4 /* Urbanist */ = {
+			isa = PBXGroup;
+			children = (
+				7B6A2F502B6B0E42009032B4 /* Urbanist-VariableFont_wght.ttf */,
+				7B6A2F512B6B0E42009032B4 /* static */,
+				7B6A2F642B6B0E42009032B4 /* OFL.txt */,
+				7B6A2F652B6B0E42009032B4 /* README.txt */,
+				7B6A2F662B6B0E42009032B4 /* Urbanist-Italic-VariableFont_wght.ttf */,
+			);
+			path = Urbanist;
+			sourceTree = "<group>";
+		};
+		7B6A2F512B6B0E42009032B4 /* static */ = {
+			isa = PBXGroup;
+			children = (
+				7B6A2F522B6B0E42009032B4 /* Urbanist-Bold.ttf */,
+				7B6A2F532B6B0E42009032B4 /* Urbanist-Regular.ttf */,
+				7B6A2F542B6B0E42009032B4 /* Urbanist-LightItalic.ttf */,
+				7B6A2F552B6B0E42009032B4 /* Urbanist-ExtraLightItalic.ttf */,
+				7B6A2F562B6B0E42009032B4 /* Urbanist-ExtraBoldItalic.ttf */,
+				7B6A2F572B6B0E42009032B4 /* Urbanist-Thin.ttf */,
+				7B6A2F582B6B0E42009032B4 /* Urbanist-MediumItalic.ttf */,
+				7B6A2F592B6B0E42009032B4 /* Urbanist-SemiBold.ttf */,
+				7B6A2F5A2B6B0E42009032B4 /* Urbanist-Italic.ttf */,
+				7B6A2F5B2B6B0E42009032B4 /* Urbanist-Black.ttf */,
+				7B6A2F5C2B6B0E42009032B4 /* Urbanist-BlackItalic.ttf */,
+				7B6A2F5D2B6B0E42009032B4 /* Urbanist-Light.ttf */,
+				7B6A2F5E2B6B0E42009032B4 /* Urbanist-SemiBoldItalic.ttf */,
+				7B6A2F5F2B6B0E42009032B4 /* Urbanist-BoldItalic.ttf */,
+				7B6A2F602B6B0E42009032B4 /* Urbanist-ExtraBold.ttf */,
+				7B6A2F612B6B0E42009032B4 /* Urbanist-Medium.ttf */,
+				7B6A2F622B6B0E42009032B4 /* Urbanist-ExtraLight.ttf */,
+				7B6A2F632B6B0E42009032B4 /* Urbanist-ThinItalic.ttf */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		7B6A2F7D2B6B0E52009032B4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7B6A2F4F2B6B0E42009032B4 /* Urbanist */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		7BC34CFB2B6AAA1300A34D02 = {
 			isa = PBXGroup;
 			children = (
+				7B6A2F7D2B6B0E52009032B4 /* Fonts */,
 				7BC34D062B6AAA1300A34D02 /* tzktSample */,
 				7BC34D172B6AAA1500A34D02 /* tzktSampleTests */,
 				7BC34D212B6AAA1500A34D02 /* tzktSampleUITests */,
@@ -102,6 +197,7 @@
 		7BC34D062B6AAA1300A34D02 /* tzktSample */ = {
 			isa = PBXGroup;
 			children = (
+				7B6A2F7E2B6B10BE009032B4 /* Info.plist */,
 				7BC34D342B6AB93700A34D02 /* ViewModel */,
 				7BC34D322B6AB91600A34D02 /* View */,
 				7BC34D312B6AB90600A34D02 /* Model */,
@@ -150,7 +246,8 @@
 		7BC34D322B6AB91600A34D02 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7BC34D092B6AAA1300A34D02 /* ContentView.swift */,
+				7BC34D092B6AAA1300A34D02 /* BlockTable.swift */,
+				7B6A2F812B6B1F40009032B4 /* TransactionTable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				7BC34D3B2B6AC48D00A34D02 /* VM_BlockTable.swift */,
+				7B6A2F7F2B6B1C18009032B4 /* VM_TransactionTable.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -227,7 +325,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					7BC34D032B6AAA1300A34D02 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -267,8 +365,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6A2F6D2B6B0E42009032B4 /* Urbanist-Thin.ttf in Resources */,
+				7B6A2F742B6B0E42009032B4 /* Urbanist-SemiBoldItalic.ttf in Resources */,
+				7B6A2F6F2B6B0E42009032B4 /* Urbanist-SemiBold.ttf in Resources */,
+				7B6A2F702B6B0E42009032B4 /* Urbanist-Italic.ttf in Resources */,
+				7B6A2F6E2B6B0E42009032B4 /* Urbanist-MediumItalic.ttf in Resources */,
+				7B6A2F712B6B0E42009032B4 /* Urbanist-Black.ttf in Resources */,
+				7B6A2F7B2B6B0E42009032B4 /* README.txt in Resources */,
+				7B6A2F772B6B0E42009032B4 /* Urbanist-Medium.ttf in Resources */,
+				7B6A2F6C2B6B0E42009032B4 /* Urbanist-ExtraBoldItalic.ttf in Resources */,
+				7B6A2F752B6B0E42009032B4 /* Urbanist-BoldItalic.ttf in Resources */,
+				7B6A2F762B6B0E42009032B4 /* Urbanist-ExtraBold.ttf in Resources */,
+				7B6A2F792B6B0E42009032B4 /* Urbanist-ThinItalic.ttf in Resources */,
+				7B6A2F6B2B6B0E42009032B4 /* Urbanist-ExtraLightItalic.ttf in Resources */,
+				7B6A2F7A2B6B0E42009032B4 /* OFL.txt in Resources */,
 				7BC34D0F2B6AAA1500A34D02 /* Preview Assets.xcassets in Resources */,
 				7BC34D0C2B6AAA1500A34D02 /* Assets.xcassets in Resources */,
+				7B6A2F672B6B0E42009032B4 /* Urbanist-VariableFont_wght.ttf in Resources */,
+				7B6A2F6A2B6B0E42009032B4 /* Urbanist-LightItalic.ttf in Resources */,
+				7B6A2F682B6B0E42009032B4 /* Urbanist-Bold.ttf in Resources */,
+				7B6A2F782B6B0E42009032B4 /* Urbanist-ExtraLight.ttf in Resources */,
+				7B6A2F722B6B0E42009032B4 /* Urbanist-BlackItalic.ttf in Resources */,
+				7B6A2F732B6B0E42009032B4 /* Urbanist-Light.ttf in Resources */,
+				7B6A2F692B6B0E42009032B4 /* Urbanist-Regular.ttf in Resources */,
+				7B6A2F7C2B6B0E42009032B4 /* Urbanist-Italic-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,10 +413,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6A2F822B6B1F40009032B4 /* TransactionTable.swift in Sources */,
 				7BC34D362B6AB97000A34D02 /* Block.swift in Sources */,
 				7BC34D3C2B6AC48D00A34D02 /* VM_BlockTable.swift in Sources */,
 				7BC34D382B6ABA4B00A34D02 /* Account.swift in Sources */,
-				7BC34D0A2B6AAA1300A34D02 /* ContentView.swift in Sources */,
+				7BC34D0A2B6AAA1300A34D02 /* BlockTable.swift in Sources */,
+				7B6A2F802B6B1C18009032B4 /* VM_TransactionTable.swift in Sources */,
 				7BC34D082B6AAA1300A34D02 /* tzktSampleApp.swift in Sources */,
 				7BC34D3A2B6ABB2F00A34D02 /* Transaction.swift in Sources */,
 			);
@@ -339,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -371,6 +494,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -388,6 +512,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -399,6 +524,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -431,6 +557,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -442,6 +569,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -460,6 +588,7 @@
 				DEVELOPMENT_TEAM = 437GD9M56J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tzktSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -489,6 +618,7 @@
 				DEVELOPMENT_TEAM = 437GD9M56J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tzktSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
