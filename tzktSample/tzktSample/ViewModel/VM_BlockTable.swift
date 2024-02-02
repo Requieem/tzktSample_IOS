@@ -7,85 +7,73 @@
 
 import Foundation
 
-class VM_BlockTable : ObservableObject {
+/// ViewModel for managing and fetching blockchain blocks for `BlockTable` view.
+class VM_BlockTable: ObservableObject {
     @Published var blocks = [Block]()
+    @Published var lastError: Error?
     
-    var offset : Int = 0
-    let limit : Int = 10
+    var offset: Int = 0
+    let limit: Int = 10
+    private var apiService: APIService
     
-    func fetchBlocks() {
-        let urlString = "https://api.tzkt.io/v1/blocks?sort.desc=level&offset=\(offset)&limit=\(limit)"
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
-            return
-        }
-        
-        var request = URLRequest(url: url, timeoutInterval: Double.infinity)
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { [strongSelf = self] data, response, error in
-            guard let data = data, error == nil else {
-                print(String(describing: error))
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-                let newBlocks = try decoder.decode([Block].self, from: data)
-                
-                let group = DispatchGroup()
-                
-                var actuallyNewBlocks = newBlocks.filter { block in
-                    !strongSelf.blocks.contains(where: { $0 == block })
-                }
-                
-                strongSelf.offset += newBlocks.count - actuallyNewBlocks.count
-                
-                for (index, block) in actuallyNewBlocks.enumerated() {
-                    group.enter()
-                    strongSelf.fetchTransactionCount(for: block.level) { count in
-                        DispatchQueue.main.async {
-                            actuallyNewBlocks[index].transactionCount = count
-                            group.leave()
-                        }
-                    }
-                }
-                
-                group.notify(queue: .main) { [] in
-                    strongSelf.blocks.append(contentsOf: actuallyNewBlocks)
-                    strongSelf.offset += strongSelf.limit
-                    print("OFFSET: \(strongSelf.offset)")
-                    print("LIMIT: \(strongSelf.limit)")
-                }
-            } catch {
-                print("Failed to decode Block JSON: \(error)")
-            }
-        }
-        
-        task.resume()
+    /// Initializes the ViewModel with a specific apiService.
+    /// - Parameter apiService: The apiService to inject for request handling
+    init(apiService: APIService = APIService()) {
+        self.apiService = apiService
     }
     
-    private func fetchTransactionCount(for level: Int, completion: @escaping (Int) -> Void) {
-        var request = URLRequest(url: URL(string: "https://api.tzkt.io/v1/operations/transactions/count?level=\(level)")!, timeoutInterval: Double.infinity)
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                print(String(describing: error))
-                return
+    /// Fetches blocks from the server and updates the `blocks` array.
+    func fetchBlocks() {
+        let urlString = "https://api.tzkt.io/v1/blocks?sort.desc=level&offset=\(offset)&limit=\(limit)"
+        apiService.fetch(urlString, decodingType: [Block].self) { [weak self] result in
+            switch result {
+            case .success(let newBlocks):
+                self?.processFetchedBlocks(newBlocks)
+            case .failure(let error):
+                self?.lastError = error
+                print("Error fetching blocks: \(error.localizedDescription)")
             }
-            
-            do {
-                let transactionCount = try JSONDecoder().decode(Int.self, from: data)
-                DispatchQueue.main.async {
-                    completion(transactionCount)
-                }
-            } catch {
-                print("Decoding error: \(error)")
+        }
+    }
+    
+    /// Processes the blocks fetched from the server.
+    /// It filters out duplicate blocks and fetches transaction counts for new blocks.
+    func processFetchedBlocks(_ newBlocks: [Block]) {
+        let actuallyNewBlocks = newBlocks.filter { !self.blocks.contains($0) }
+        self.offset += newBlocks.count - actuallyNewBlocks.count
+        
+        let group = DispatchGroup()
+        var updatedBlocks = actuallyNewBlocks
+        
+        for (index, block) in actuallyNewBlocks.enumerated() {
+            group.enter()
+            fetchTransactionCount(for: block.level) { count in
+                updatedBlocks[index].transactionCount = count
+                group.leave()
             }
         }
         
-        task.resume()
+        group.notify(queue: .main) {
+            self.blocks.append(contentsOf: updatedBlocks)
+            self.offset += self.limit
+        }
+    }
+    
+    /// Fetches the transaction count for a given block level.
+    /// - Parameters:
+    ///   - level: The block level.
+    ///   - completion: Closure called with the transaction count.
+    func fetchTransactionCount(for level: Int, completion: @escaping (Int) -> Void) {
+        let urlString = "https://api.tzkt.io/v1/operations/transactions/count?level=\(level)"
+        apiService.fetch(urlString, decodingType: Int.self) { result in
+            switch result {
+            case .success(let count):
+                completion(count)
+            case .failure(let error):
+                self.lastError = error
+                completion(-1)
+                print("Error fetching transaction count: \(error.localizedDescription)")
+            }
+        }
     }
 }

@@ -7,56 +7,46 @@
 
 import Foundation
 
-class VM_TransactionTable : ObservableObject {
+/// ViewModel for managing and fetching transactions for a specific block.
+class VM_TransactionTable: ObservableObject {
     @Published var transactions = [Transaction]()
+    
+    var offset: Int = 0
+    var limit: Int = 10
     private var block: Block
+    private var apiService: APIService
 
-    init(block: Block) {
+    /// Initializes the ViewModel with a specific block and apiService.
+    /// - Parameter block: The block for which transactions are fetched.
+    /// - Parameter apiService: The apiService to inject for request handling
+    init(block: Block, apiService: APIService = APIService()) {
+        self.apiService = apiService
         self.block = block
     }
-    
-    var offset : Int = 0
-    let limit : Int = 10
 
+    /// Fetches transactions associated with the block from the server.
     func fetchTransactions() {
         let urlString = "https://api.tzkt.io/v1/operations/transactions?level=\(block.level)&offset=\(offset)&limit=\(limit)"
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
-            return
-        }
-
-        var request = URLRequest(url: url, timeoutInterval: Double.infinity)
-        request.httpMethod = "GET"
-
-        let task = URLSession.shared.dataTask(with: request) { [strongSelf = self] data, response, error in
-            guard let data = data, error == nil else {
-                print(String(describing: error))
-                return
-            }
-
-            do {
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-                var newTransactions = try decoder.decode([Transaction].self, from: data)
-
-                let group = DispatchGroup()
-                
-                let oldCount = newTransactions.count
-                newTransactions = newTransactions.filter { transaction in
-                    !strongSelf.transactions.contains(where: { $0 == transaction })
-                }
-                
-                strongSelf.offset += oldCount - newTransactions.count
-
-                group.notify(queue: .main) { [] in
-                    strongSelf.transactions.append(contentsOf: newTransactions)
-                    strongSelf.offset += strongSelf.limit
-                }
-            } catch {
-                print("Failed to decode Transaction JSON: \(error)")
+        apiService.fetch(urlString, decodingType: [Transaction].self) { [weak self] result in
+            switch result {
+            case .success(let newTransactions):
+                self?.processFetchedTransactions(newTransactions)
+            case .failure(let error):
+                print("Error fetching transactions: \(error.localizedDescription)")
             }
         }
+    }
 
-        task.resume()
+    /// Processes the transactions fetched from the server.
+    /// Filters out duplicates and appends new transactions to the published array.
+    func processFetchedTransactions(_ newTransactions: [Transaction]) {
+        let filteredTransactions = newTransactions.filter { !self.transactions.contains($0) }
+        let fetchedCount = newTransactions.count - filteredTransactions.count
+        self.offset += fetchedCount
+        
+        DispatchQueue.main.async {
+            self.transactions.append(contentsOf: filteredTransactions)
+            self.offset += self.limit
+        }
     }
 }
