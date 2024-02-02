@@ -49,6 +49,50 @@ class VM_TransactionTableTests: XCTestCase {
             XCTAssertEqual(self.viewModel.transactions, mockTransactions)
         }
     }
+    
+    func testRefreshTransactionsSuccessfully() {
+        // Given
+        let transactionsURL = "https://api.tzkt.io/v1/operations/transactions?level=\(testBlock.level)&offset=0&limit=10"
+        let mockTransactions = [Transaction(sender: Account(alias: "account1", address: "address1"), target: Account(alias: "account2", address: "address2"), amount: 10, status: "accepted", id: 1), Transaction(sender: Account(alias: "account3", address: "address3"), target: Account(alias: "account4", address: "address4"), amount: 10, status: "accepted", id: 2)]
+        let mockTransactionsData = try? JSONEncoder().encode(mockTransactions)
+        mockAPIService.mockResponses[transactionsURL] = (mockTransactionsData, nil)
+
+        let expectation = self.expectation(description: "Fetch transactions")
+
+        // When
+        viewModel.fetchTransactions()
+
+        // Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1) { [self] _ in
+            XCTAssertEqual(self.viewModel.transactions, mockTransactions)
+            
+            // Given
+            var newMockTransactions = [Transaction(sender: Account(alias: "account5", address: "address5"), target: Account(alias: "account6", address: "address6"), amount: 10, status: "accepted", id: 1), Transaction(sender: Account(alias: "account7", address: "address7"), target: Account(alias: "account8", address: "address8"), amount: 10, status: "accepted", id: 2)]
+            newMockTransactions.append(contentsOf: mockTransactions)
+            
+            let newMockTransactionsData = try? JSONEncoder().encode(newMockTransactions)
+            mockAPIService.mockResponses[transactionsURL] = (newMockTransactionsData, nil)
+
+            let newExpectation = self.expectation(description: "Fetch newly added transactions")
+
+            // When
+            viewModel.refreshTransactions()
+
+            // Then
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                newExpectation.fulfill()
+            }
+
+            waitForExpectations(timeout: 1) { _ in
+                XCTAssertEqual(self.viewModel.transactions, newMockTransactions)
+                XCTAssertEqual(self.viewModel.offset, self.viewModel.limit)
+            }
+        }
+    }
 
     func testFetchTransactionsFailure() {
         // Given

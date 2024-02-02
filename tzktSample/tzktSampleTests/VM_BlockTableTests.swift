@@ -46,12 +46,71 @@ class VM_BlockTableTests: XCTestCase {
         
         // Then
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertEqual(self.viewModel.blocks, mockBlocks)
-            XCTAssertEqual(self.viewModel.blocks.first?.transactionCount, mockTransactionCount)
             expectation.fulfill()
         }
 
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 1) { _ in
+            XCTAssertEqual(self.viewModel.blocks, mockBlocks)
+            XCTAssertEqual(self.viewModel.blocks.first?.transactionCount, mockTransactionCount)
+        }
+    }
+    
+    func testRefreshBlocksProcessesSuccessfully() {
+        // Given
+        let blocksURL = "https://api.tzkt.io/v1/blocks?sort.desc=level&offset=0&limit=10"
+        let transactionCountURL = "https://api.tzkt.io/v1/operations/transactions/count?level=123"
+        
+        let mockBlocks = [Block(level: 123, timestamp: Date(), proposer: Account(alias: "Test", address: "address"))]
+        let mockTransactionCount = 10
+
+        let mockBlocksData = try? JSONEncoder().encode(mockBlocks)
+        let mockTransactionCountData = try? JSONEncoder().encode(mockTransactionCount)
+
+        mockAPIService.mockResponses[blocksURL] = (mockBlocksData, nil)
+        mockAPIService.mockResponses[transactionCountURL] = (mockTransactionCountData, nil)
+        
+        let expectation = self.expectation(description: "Fetch and process blocks")
+
+        // When
+        viewModel.fetchBlocks()
+        
+        // Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 1) { [self] _ in
+            XCTAssertEqual(self.viewModel.blocks, mockBlocks)
+            XCTAssertEqual(self.viewModel.blocks.first?.transactionCount, mockTransactionCount)
+            
+            // Given
+            var newMockBlocks = [Block(level: 123, timestamp: Date(), proposer: Account(alias: "Test", address: "address"))]
+                newMockBlocks.append(contentsOf: mockBlocks)
+            
+            let newMockTransactionCount = 12
+
+            let newMockBlocksData = try? JSONEncoder().encode(newMockBlocks)
+            let newMockTransactionCountData = try? JSONEncoder().encode(newMockTransactionCount)
+
+            mockAPIService.mockResponses[blocksURL] = (newMockBlocksData, nil)
+            mockAPIService.mockResponses[transactionCountURL] = (newMockTransactionCountData, nil)
+            
+            let newExpectation = self.expectation(description: "Fetch and process blocks newly addded blocks")
+
+            // When
+            viewModel.refreshBlocks()
+            
+            // Then
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                newExpectation.fulfill()
+            }
+
+            waitForExpectations(timeout: 1) { _ in
+                XCTAssertEqual(self.viewModel.blocks, newMockBlocks)
+                XCTAssertEqual(self.viewModel.blocks.first?.transactionCount, newMockTransactionCount)
+                XCTAssertEqual(self.viewModel.offset, self.viewModel.limit)
+            }
+        }
     }
     
     func testFetchBlocksFailure() {
