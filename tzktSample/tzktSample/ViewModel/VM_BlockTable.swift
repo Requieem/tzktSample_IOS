@@ -36,6 +36,13 @@ class VM_BlockTable: ObservableObject {
         }
     }
     
+    /// Refreshes the blocks list by erasing it and initializing the offset
+    func refreshBlocks() {
+        self.blocks = []
+        self.offset = 0
+        self.fetchBlocks()
+    }
+    
     /// Processes the blocks fetched from the server.
     /// It filters out duplicate blocks and fetches transaction counts for new blocks.
     func processFetchedBlocks(_ newBlocks: [Block]) {

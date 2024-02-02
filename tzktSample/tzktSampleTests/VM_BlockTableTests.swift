@@ -133,7 +133,6 @@ class VM_BlockTableTests: XCTestCase {
         viewModel.processFetchedBlocks(mockBlocks)
         
         // Then
-        // Assertions based on how your viewModel handles this case
         XCTAssertEqual(viewModel.blocks.count, 0)
     }
 }

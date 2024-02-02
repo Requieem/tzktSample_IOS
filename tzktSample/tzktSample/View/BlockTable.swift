@@ -30,13 +30,17 @@ struct BlockTable: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
                 }
+                .listStyle(.grouped)
+                .scrollContentBackground(.hidden)
                 .onAppear {
                     // Initial data fetching
                     viewModel.fetchBlocks()
                 }
-                .listStyle(.grouped)
                 .background(colorScheme == .dark ? Color(UIColor.systemGray6) : Color(UIColor.white))
-                .scrollContentBackground(.hidden)
+                .refreshable {
+                    // Refetch with offset 0
+                    viewModel.refreshBlocks()
+                }
             }
         }
         .background(colorScheme == .dark ? Color(UIColor.systemGray6) : Color(UIColor.white))

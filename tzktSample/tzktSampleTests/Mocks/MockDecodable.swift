@@ -7,7 +7,6 @@
 
 import Foundation
 
-// A mock decodable to test decoding error
 struct MockDecodable: Decodable, Equatable {
     let id: Int
 }

@@ -132,7 +132,6 @@
 		7B15D3832B6C2AE300CD6EDD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				7BFE130C2B6C5139001C6D1F /* Protocols */,
 				7B15D3842B6C2AF100CD6EDD /* CustomDateFormatter.swift */,
 				7B15D3862B6C2E2400CD6EDD /* CustomJsonDecoder.swift */,
 				7B82AE7B2B6C474100E4CD76 /* APIService.swift */,
@@ -209,6 +208,7 @@
 			children = (
 				7B15D3832B6C2AE300CD6EDD /* Utility */,
 				7B6A2F7E2B6B10BE009032B4 /* Info.plist */,
+				7BFE130C2B6C5139001C6D1F /* Protocols */,
 				7BC34D342B6AB93700A34D02 /* ViewModel */,
 				7BC34D322B6AB91600A34D02 /* View */,
 				7BC34D312B6AB90600A34D02 /* Model */,

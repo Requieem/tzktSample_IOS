@@ -36,6 +36,13 @@ class VM_TransactionTable: ObservableObject {
             }
         }
     }
+    
+    /// Refreshes the transactions list by erasing it and initializing the offset
+    func refreshTransactions() {
+        self.transactions = []
+        self.offset = 0
+        self.fetchTransactions()
+    }
 
     /// Processes the transactions fetched from the server.
     /// Filters out duplicates and appends new transactions to the published array.

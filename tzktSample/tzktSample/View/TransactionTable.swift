@@ -26,7 +26,7 @@ struct TransactionTable: View {
                     .onAppear {
                         // Fetch more transactions when the last one becomes visible
                         if transaction == viewModel.transactions.last {
-                            withAnimation {
+                            withAnimation(.easeIn) {
                                 viewModel.fetchTransactions()
                             }
                         }
@@ -34,14 +34,16 @@ struct TransactionTable: View {
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
             }
+            .zIndex(-1)
+            .padding(-15)
+            .scrollContentBackground(.hidden)
             .onAppear {
                 // Initial data fetching
                 viewModel.fetchTransactions()
             }
-            .zIndex(-1)
-            .padding(-15)
-            .animation(.easeIn, value: viewModel.transactions)
-            .scrollContentBackground(.hidden)
+            .refreshable {
+                viewModel.refreshTransactions()
+            }
         }
         .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
         .background(colorScheme == .dark ? Color(UIColor.systemGray6) : Color(UIColor.white))

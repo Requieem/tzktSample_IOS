@@ -132,7 +132,4 @@ class APIServiceTests: XCTestCase {
             XCTAssertNotNil(actualError)
         }
     }
-
-    // Additional tests can be implemented similarly for different HTTP status codes,
-    // different `Decodable` types, and other edge cases.
 }
