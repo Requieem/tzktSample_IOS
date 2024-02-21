@@ -10,6 +10,7 @@
 		7B15D3802B6BFF4B00CD6EDD /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15D37F2B6BFF4B00CD6EDD /* Header.swift */; };
 		7B15D3852B6C2AF100CD6EDD /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15D3842B6C2AF100CD6EDD /* CustomDateFormatter.swift */; };
 		7B15D3872B6C2E2400CD6EDD /* CustomJsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B15D3862B6C2E2400CD6EDD /* CustomJsonDecoder.swift */; };
+		7B2F3F332B8639D2008098E5 /* isHeavyNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F3F322B8639D2008098E5 /* isHeavyNumber.swift */; };
 		7B6A2F672B6B0E42009032B4 /* Urbanist-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F502B6B0E42009032B4 /* Urbanist-VariableFont_wght.ttf */; };
 		7B6A2F682B6B0E42009032B4 /* Urbanist-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F522B6B0E42009032B4 /* Urbanist-Bold.ttf */; };
 		7B6A2F692B6B0E42009032B4 /* Urbanist-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B6A2F532B6B0E42009032B4 /* Urbanist-Regular.ttf */; };
@@ -66,6 +67,7 @@
 		7B15D37F2B6BFF4B00CD6EDD /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		7B15D3842B6C2AF100CD6EDD /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		7B15D3862B6C2E2400CD6EDD /* CustomJsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJsonDecoder.swift; sourceTree = "<group>"; };
+		7B2F3F322B8639D2008098E5 /* isHeavyNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = isHeavyNumber.swift; path = tzktSampleTests/isHeavyNumber.swift; sourceTree = "<group>"; };
 		7B6A2F502B6B0E42009032B4 /* Urbanist-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		7B6A2F522B6B0E42009032B4 /* Urbanist-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Bold.ttf"; sourceTree = "<group>"; };
 		7B6A2F532B6B0E42009032B4 /* Urbanist-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Urbanist-Regular.ttf"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		7BC34CFB2B6AAA1300A34D02 = {
 			isa = PBXGroup;
 			children = (
+				7B2F3F322B8639D2008098E5 /* isHeavyNumber.swift */,
 				7B6A2F7D2B6B0E52009032B4 /* Fonts */,
 				7BC34D062B6AAA1300A34D02 /* tzktSample */,
 				7BC34D172B6AAA1500A34D02 /* tzktSampleTests */,
@@ -419,6 +422,7 @@
 				7B6A2F802B6B1C18009032B4 /* VM_TransactionTable.swift in Sources */,
 				7BC34D082B6AAA1300A34D02 /* tzktSampleApp.swift in Sources */,
 				7B82AE7C2B6C474100E4CD76 /* APIService.swift in Sources */,
+				7B2F3F332B8639D2008098E5 /* isHeavyNumber.swift in Sources */,
 				7BC34D3A2B6ABB2F00A34D02 /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
